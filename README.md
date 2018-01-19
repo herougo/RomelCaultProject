@@ -1,3 +1,6 @@
 # RomelCaultProject
 
-(see the document tab for full documentation)
+if date < 'Jan 21, 2018':
+  leavePage()
+else:
+  readPage(compliments)
