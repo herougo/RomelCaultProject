@@ -1,6 +1,2 @@
 # RomelCaultProject
-
-if date < 'Jan 21, 2018':
-  leavePage()
-else:
-  readPage(compliments)
+Come back on Jan 21! 
