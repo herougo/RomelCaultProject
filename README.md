@@ -1,2 +1,2 @@
 # RomelCaultProject
-Come back on Jan 21! 
+In progress of refactoring
