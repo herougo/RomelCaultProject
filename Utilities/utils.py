@@ -2,6 +2,8 @@ import warnings
 import numpy as np
 import pandas as pd
 import keras
+import math
+
 
 def get_closest_points(train, test, metric='euclidean', n=None, frac=1):
     """get n closest points or the fraction of train that is closest to the 
@@ -262,3 +264,24 @@ def to_categorical(x, n):
         return keras.utils.np_utils.to_categorical(x, n)
     else:
         raise BaseException(f'to_one_hot unhandled type {type(x)}')
+
+
+
+def squareList(inputList):
+    return [item ** 2 for item in inputList]
+
+
+def sqrtList(inputList):
+    return [math.sqrt(item) for item in inputList]
+
+
+def rmsList(inputList):
+    return math.sqrt(sum(squareList(inputList)) / len(inputList))
+
+
+def minMaxList(inputList):
+    return (max(inputList) - min(inputList))
+
+
+def meanList(inputList):
+    return (sum(inputList) / float(len(inputList)))

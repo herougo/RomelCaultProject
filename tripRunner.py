@@ -1,10 +1,5 @@
 from tripData import * 
 
-testData1 = r'C:\Users\acault\Desktop\classifierTestData\dataVText1.csv'
-testData2 = r'C:\Users\acault\Desktop\classifierTestData\dataVText2.csv'
-testData3 = r'C:\Users\acault\Desktop\classifierTestData\dataVText3.csv'
-testData4 = r'C:\Users\acault\Desktop\classifierTestData\dataHText1.csv'
-testData5 = r'C:\Users\acault\Desktop\classifierTestData\dataHText4.csv'
 #dataW1
 from tripDataManip import *
 test1 = Trip('test12')

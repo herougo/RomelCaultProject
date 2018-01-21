@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd 
 from scipy.fftpack import fft
 import numpy as np
-from generalFunctions import *
+from Utilities.utils import *
 plt.style.use('ggplot')
 import time
 start_time = time.time()
@@ -39,7 +39,6 @@ class TripDataParameter:
         self.xData = []
         self.yData = []
         self.zData = []
-    #OLD big mistake I made: I had sum instead of mean for a while for the rolling function     
     def populateParameter(self, dataFrame, numberCode):
         subsetDF = dataFrame.loc[dataFrame[1] == numberCode]
         self.timeData = sliceDataSet(subsetDF[2].rolling(window=5).mean().tolist())
