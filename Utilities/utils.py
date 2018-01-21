@@ -265,23 +265,42 @@ def to_categorical(x, n):
     else:
         raise BaseException(f'to_one_hot unhandled type {type(x)}')
 
-
-
+#used to apply basic mathematical functions on lists
 def squareList(inputList):
     return [item ** 2 for item in inputList]
-
 
 def sqrtList(inputList):
     return [math.sqrt(item) for item in inputList]
 
-
 def rmsList(inputList):
     return math.sqrt(sum(squareList(inputList)) / len(inputList))
-
 
 def minMaxList(inputList):
     return (max(inputList) - min(inputList))
 
-
 def meanList(inputList):
     return (sum(inputList) / float(len(inputList)))
+
+# removes the first and last fraction of a list depending on amount of divisions wanted, default is to remove 40% of list
+def sliceDataSet(dataSet, amountOfDivisions=5):
+    length = len(dataSet)
+    start = int(length / amountOfDivisions)
+    end = length - start
+    slicedSet = dataSet[start:end]
+    return slicedSet
+
+# frequency domain conversion (FFT)
+def fftConversion(dataSet):
+    dataSetArray = np.asarray(dataSet)
+    dataSetArray = dataSetArray[~np.isnan(dataSetArray)]
+    freqDataSet = fft(dataSetArray)
+    return freqDataSet
+
+# allows functions to be applied on rolling windows of a Pandas dataframe
+def functionOnWindow(inputList, function, corr=False, corrList=[], windowSize=200):
+    if corr == True:
+        return pd.Series(inputList).rolling(window=windowSize, min_periods=windowSize).corr(other=pd.Series(corrList),
+                                                                                            pairwise=False).tolist()[
+               windowSize:-windowSize]
+    return pd.Series(inputList).rolling(min_periods=windowSize, window=windowSize).apply(func=function).values.tolist()[
+           windowSize:-windowSize]
