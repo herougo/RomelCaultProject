@@ -1,2 +1,2 @@
 # RomelCaultProject
-In progress of refactoring
+Welcome! Feel free to ask us about anything
