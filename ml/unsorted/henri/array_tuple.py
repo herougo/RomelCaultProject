@@ -190,7 +190,7 @@ class DataSet:
 
     def sample_index(self, n=None, frac=None, p=None):
         """
-        Sample data point indices without replacements
+        Sample_Problem data point indices without replacements
         :param n: number of examples to sample
         :param frac: fraction of examples in self to sample
         :param p: distribution over all examples when sampling

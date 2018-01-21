@@ -21,7 +21,7 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
 
 if __name__ == "__main__":
 
-    # Sample rate and desired cutoff frequencies (in Hz).
+    # Sample_Problem rate and desired cutoff frequencies (in Hz).
     fs = 300.0
     lowcut = 65.0
     highcut = 130.0
